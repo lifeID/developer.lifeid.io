@@ -1,0 +1,20 @@
+version: '3'
+services:
+  # To run a local web server
+  # docker-compose run -p 3000:3000 web
+  web:
+    build: .
+    command: bundle exec middleman serve -p 3000
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+
+  # To build web gh-pages branch contents.
+  # Deploy it with "./deploy.sh --push-only" on your host machine.
+  # docker-compose run build-web
+  build-web:
+    build: .
+    command: ./deploy.sh --source-only
+    volumes:
+      - .:/myapp
