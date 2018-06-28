@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;,&quot;go&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,10 @@
     <div class="toc-wrapper">
       <img src="images/logo.svg" class="logo" width="175" height="100" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="go">go</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -223,9 +223,51 @@
       <div id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#welcome-to-the-official-lifeid-developer-documentation" class="toc-h2 toc-link" data-title="welcome-to-the-official-lifeid-developer-documentation">Welcome to the official lifeID developer documentation</a>
+                  </li>
+                  <li>
+                    <a href="#how-is-it-used" class="toc-h2 toc-link" data-title="how-is-it-used">How is it used?</a>
+                  </li>
+              </ul>
           </li>
           <li>
-            <a href="#guides" class="toc-h1 toc-link" data-title="guides">Guides</a>
+            <a href="#getting-started-guides" class="toc-h1 toc-link" data-title="getting-started-guides">Getting Started Guides</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#i-want-to-let-people-sign-into-my-website-with-lifeid" class="toc-h2 toc-link" data-title="i-want-to-let-people-sign-into-my-website-with-lifeid">I want to let people sign into my website with lifeID</a>
+                  </li>
+                  <li>
+                    <a href="#i-want-to-issue-verified-claims-to-lifeid-holders" class="toc-h2 toc-link" data-title="i-want-to-issue-verified-claims-to-lifeid-holders">I want to issue verified claims to lifeID holders</a>
+                  </li>
+                  <li>
+                    <a href="#i-want-to-earn-id-tokens-by-running-an-instance-of-the-api-bridge" class="toc-h2 toc-link" data-title="i-want-to-earn-id-tokens-by-running-an-instance-of-the-api-bridge">I want to earn ID tokens by running an instance of the API bridge</a>
+                  </li>
+                  <li>
+                    <a href="#i-want-to-build-an-app-that-uses-lifeid" class="toc-h2 toc-link" data-title="i-want-to-build-an-app-that-uses-lifeid">I want to build an app that uses lifeID</a>
+                  </li>
+                  <li>
+                    <a href="#need-to-do-something-else" class="toc-h2 toc-link" data-title="need-to-do-something-else">Need to do something else?</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#components" class="toc-h1 toc-link" data-title="components">Components</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#the-admin-portal" class="toc-h2 toc-link" data-title="the-admin-portal">The admin portal</a>
+                  </li>
+                  <li>
+                    <a href="#the-multi-blockchain-api-bridge" class="toc-h2 toc-link" data-title="the-multi-blockchain-api-bridge">The multi-blockchain API bridge</a>
+                  </li>
+                  <li>
+                    <a href="#the-multi-network-did-encoder" class="toc-h2 toc-link" data-title="the-multi-network-did-encoder">The multi-network DID encoder</a>
+                  </li>
+                  <li>
+                    <a href="#the-lifeid-openid-connect-provider" class="toc-h2 toc-link" data-title="the-lifeid-openid-connect-provider">The lifeID openID Connect provider</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#reference" class="toc-h1 toc-link" data-title="reference">Reference</a>
@@ -235,22 +277,84 @@
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Coming Soon</p>
-<h1 id='guides'>Guides</h1><h1 id='reference'>Reference</h1><h1 id='errors'>Errors</h1>
+        <h1 id='introduction'>Introduction</h1><h3 id='welcome-to-the-official-lifeid-developer-documentation'>Welcome to the official lifeID developer documentation</h3>
+<p>lifeID is a self-sovereign, open-source, decentralized platform designed to give everyone the tools they need to transact their identity as they wish. For more information on self-sovereign identity (SSI) and lifeID&#39;s mission click ....</p>
+<h3 id='how-is-it-used'>How is it used?</h3>
+<p>The way you interact with the lifeID ecosystem will depend on who are and what your goal is. For individual people, it will likely be through an app on their mobile phone. You will use it to authenticate yourself anytime you need to prove that you are who you say you are. The main advantages for individuals are the convenience of not having to remember a password and important privacy benefits, for example, knowing that your data will not be correlated between websites you login to (for more information about this see: <something>)</p>
+
+<p>Governments, corporations and non-profit organizations will interact with the lifeID platform primarily through an integration SDK that you can set up and use to verify that people are who they say they are. Organizations will also be able to issue verified credentials to any lifeID holder. The holder will control these credentials and decide who to share them with. (for more information about verified credentials see: <something>) Having a certain bank account balance (verified by the bank), being over a certain age (verified by a government), and having a college degree (verified by the college) are all examples that could be verified credentials.</p>
+
+<p>For a more detailed description of the architecture and processes, go here<something></p>
+<h1 id='getting-started-guides'>Getting Started Guides</h1><h3 id='i-want-to-let-people-sign-into-my-website-with-lifeid'>I want to let people sign into my website with lifeID</h3>
+<p>Go to the lifeID integration portal: <lifeid.io/integration-portal-or-whatever></p>
+
+<p>Follow the steps to set up your organization which will be registered to the flippin&#39; BLOCKCHAIN. AWESOME!!</p>
+
+<p>The integration portal will allow you to assign trustees for your organization, trustees are individual people who are authorized to transact the organization&#39;s identity. After you create at least one trustee, the integration portal will generate your customized SDK which will contain two parts. Each is explained in more detail below:</p>
+
+<p>A JavaScript component to include in your front-end. (how do we do this? jquery, react, angular?)</p>
+
+<p>An OpenID Connect (&quot;OIDC&quot;) Client in one of lifeID&#39;s supported languages. The OIDC client will integrate to handle all of the interactions with blockchains and the mobile app on your users&#39; phones. It will provide integration with your existing authentication systems.</p>
+
+<p>There is a small cost associated with each new user that creates an account on your site. The exact cost will depend on which blockchain you use and the transaction costs associated with it. When it goes live the lifeID portal will process the payments for you.</p>
+
+<p><em>Some example costs and the approximate range</em></p>
+<h3 id='i-want-to-issue-verified-claims-to-lifeid-holders'>I want to issue verified claims to lifeID holders</h3>
+<p>You will need to create an organization registered on a blockchain using the integration portal (see above). Next, you will recieve a verified claims toolkit, which has two services.</p>
+
+<p>The first service is the signing API service, currently run by lifeID although this will likely change as we move out of beta. The signing API service will keep track of your cryptographic keys and provide a RESTful interface for you to sign claims.</p>
+
+<p>The second service will run locally and allow you to verify claims that you have issued.</p>
+
+<p>You&#39;ll need a GUI to manage and issue the claims</p>
+
+<p>You&#39;ll need a way to process payments</p>
+
+<p>You&#39;ll need a way to send ID tokens to a valid API bridge (part of the VC Toolkit?)</p>
+<h3 id='i-want-to-earn-id-tokens-by-running-an-instance-of-the-api-bridge'>I want to earn ID tokens by running an instance of the API bridge</h3>
+<p>You&#39;ll need an instance of the API bridge (Dockerized?)</p>
+
+<p>You&#39;ll need instructions on how to deploy it</p>
+<h3 id='i-want-to-build-an-app-that-uses-lifeid'>I want to build an app that uses lifeID</h3>
+<p>Currently, your lifeID, such as it is, is the HD master private key. We generate it the first time you start up the lifeID mobile app. Do we let people share it with other apps? Or does &quot;using lifeID&quot; mean necessarily using the proprietary mobile app.</p>
+<h3 id='need-to-do-something-else'>Need to do something else?</h3>
+<p>Let us know at some@email.com or on discord at lifeid.discordorwhatever</p>
+<h1 id='components'>Components</h1><h2 id='the-admin-portal'>The admin portal</h2>
+<p>The lifeID admin portal is available on github at <a href="https://github.com/lifeID/gssl-admin-portal">https://github.com/lifeID/gssl-admin-portal</a></p>
+
+<p>The lifeID admin portal provides a way to manage users who have logged in with lifeID.</p>
+
+<p>It can pay ID token to an instance of the lifeID API bridge</p>
+
+<p><em>this will probably end up being part of the integration portal, leave it out?</em></p>
+<h2 id='the-multi-blockchain-api-bridge'>The multi-blockchain API bridge</h2>
+<p>It can write DID pairs to the blockchain</p>
+
+<p>It will collect payments in ID token and then distribute some of that to the app developer (DIFFICULT TO DO SAFELY!!!) and some to the foundation.</p>
+<h2 id='the-multi-network-did-encoder'>The multi-network DID encoder</h2>
+<p>It can encode and decode off-chain DIDs</p>
+
+<p>That&#39;s all right now</p>
+<h2 id='the-lifeid-openid-connect-provider'>The lifeID openID Connect provider</h2>
+<p>The</p>
+<h1 id='reference'>Reference</h1>
+<p>Here will be definitions of all the individual terms such as DID?</p>
+
+<p>Maybe duplicative?</p>
+<h1 id='errors'>Errors</h1>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
                 <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="go">go</a>
           </div>
       </div>
     </div>
