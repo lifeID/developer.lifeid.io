@@ -267,6 +267,32 @@
                   <li>
                     <a href="#the-lifeid-openid-connect-provider" class="toc-h2 toc-link" data-title="the-lifeid-openid-connect-provider">The lifeID openID Connect provider</a>
                   </li>
+                  <li>
+                    <a href="#the-smart-contracts-on-the-ethereum-blockchain" class="toc-h2 toc-link" data-title="the-smart-contracts-on-the-ethereum-blockchain">The smart contracts on the Ethereum blockchain</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#architecture-diagrams" class="toc-h1 toc-link" data-title="architecture-diagrams">Architecture Diagrams</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#lifeid-component-overview" class="toc-h2 toc-link" data-title="lifeid-component-overview">LifeID Component Overview</a>
+                  </li>
+                  <li>
+                    <a href="#lifeid-architecture" class="toc-h2 toc-link" data-title="lifeid-architecture">LifeID Architecture</a>
+                  </li>
+                  <li>
+                    <a href="#lifeid-verified-claims-flow" class="toc-h2 toc-link" data-title="lifeid-verified-claims-flow">LifeID Verified Claims Flow</a>
+                  </li>
+                  <li>
+                    <a href="#lifeid-interation-portal" class="toc-h2 toc-link" data-title="lifeid-interation-portal">LifeID Interation Portal</a>
+                  </li>
+                  <li>
+                    <a href="#lifeid-passwordless-login" class="toc-h2 toc-link" data-title="lifeid-passwordless-login">LifeID Passwordless Login</a>
+                  </li>
+                  <li>
+                    <a href="#lifeid-openid-connect-integration-in-detail" class="toc-h2 toc-link" data-title="lifeid-openid-connect-integration-in-detail">LifeID OpenID Connect Integration in detail</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -292,19 +318,34 @@
 
 <p>For a more detailed description of the architecture and processes, go here<something></p>
 <h1 id='getting-started-guides'>Getting Started Guides</h1><h3 id='i-want-to-let-people-sign-into-my-website-with-lifeid'>I want to let people sign into my website with lifeID</h3>
+<p>First you will need to sign into the lifeID integration portal. The lifeID integration portal is an open source project that exists to help you integrate your organization with lifeID. It will provide you with a way to assign trustees who can act on behalf of your organization, as well as a developer SDK</p>
+
+<p>If you don&#39;t already have it, download the lifeID app on your mobile device.</p>
+
 <p>Go to the lifeID integration portal: <lifeid.io/integration-portal-or-whatever></p>
 
 <p>Follow the steps to set up your organization which will be registered to the flippin&#39; BLOCKCHAIN. AWESOME!!</p>
 
+<p><em>how do you pay for the blockchain writes at this stage do we need to implement payment processing?</em></p>
+
 <p>The integration portal will allow you to assign trustees for your organization, trustees are individual people who are authorized to transact the organization&#39;s identity. After you create at least one trustee, the integration portal will generate your customized SDK which will contain two parts. Each is explained in more detail below:</p>
 
-<p>A JavaScript component to include in your front-end. (how do we do this? jquery, react, angular?)</p>
+<ol>
+<li><p>A Javascript component to include in your front-end. The integration portal will allow you to select your front-end framework, style the component as you wish and then generate Javascript code to add to your site. The javascript component will be responsible for displaying a QR code that your end users must scan to login. If you wish to include any lifeID branded buttons the Javascript component can generate those as well. <em>(how do we do this? jquery, react, angular?)</em></p></li>
+<li><p>An OpenID Connect (&quot;OIDC&quot;) core implementation that handles user authentication. The integration portal will generate code for your OIDC implementation in one of lifeID&#39;s supported languages. The OIDC client will integrate with your existing server code to handle all of the interactions with blockchains and the mobile app on your users&#39; phones.</p></li>
+</ol>
 
-<p>An OpenID Connect (&quot;OIDC&quot;) Client in one of lifeID&#39;s supported languages. The OIDC client will integrate to handle all of the interactions with blockchains and the mobile app on your users&#39; phones. It will provide integration with your existing authentication systems.</p>
+<p><em>here will need code examples</em></p>
 
 <p>There is a small cost associated with each new user that creates an account on your site. The exact cost will depend on which blockchain you use and the transaction costs associated with it. When it goes live the lifeID portal will process the payments for you.</p>
 
 <p><em>Some example costs and the approximate range</em></p>
+
+<p>lifeID does not currently keep track of your users.</p>
+
+<p><em>Need a way to allow the administrators to revoke users through the integration portal</em></p>
+
+<p><em>do each of these components need a wallet?</em></p>
 <h3 id='i-want-to-issue-verified-claims-to-lifeid-holders'>I want to issue verified claims to lifeID holders</h3>
 <p>You will need to create an organization registered on a blockchain using the integration portal (see above). Next, you will recieve a verified claims toolkit, which has two services.</p>
 
@@ -315,6 +356,8 @@
 <p>You&#39;ll need a GUI to manage and issue the claims</p>
 
 <p>You&#39;ll need a way to process payments</p>
+
+<p><em>how does this work? what are you selling?</em></p>
 
 <p>You&#39;ll need a way to send ID tokens to a valid API bridge (part of the VC Toolkit?)</p>
 <h3 id='i-want-to-earn-id-tokens-by-running-an-instance-of-the-api-bridge'>I want to earn ID tokens by running an instance of the API bridge</h3>
@@ -342,12 +385,38 @@
 
 <p>That&#39;s all right now</p>
 <h2 id='the-lifeid-openid-connect-provider'>The lifeID openID Connect provider</h2>
-<p>The lifeID openID Connect provider will communicate between the integration portal, the mobile app and your website. It will run on your server and provide an interface</p>
+<p>The lifeID openID Connect provider will communicate between the integration portal, the mobile app and your website. It will run on your server and provide an API for your backend to work with.</p>
+<h2 id='the-smart-contracts-on-the-ethereum-blockchain'>The smart contracts on the Ethereum blockchain</h2>
+<p>The contracts are currently</p>
+
+<p>A set of utility functions to assist in encoding and decoding DIDs and transferring their ownership.</p>
+
+<p>A contract that writes user and organization DIDs to a registry on the Ethereum blockchain</p>
+
+<p>A contract that revokes user and organization DIDs from the Ethereum blockchain</p>
+
+<p>A contract that migrates DIDs in bulk to the Ethereum blockchain</p>
+
+<p>A contract that writes verified claim revocations to the blockchain registry.</p>
+<h1 id='architecture-diagrams'>Architecture Diagrams</h1><h2 id='lifeid-component-overview'>LifeID Component Overview</h2>
+<p><img src="images/on_chain_solution.png" alt="On Chain Solution" /></p>
+<h2 id='lifeid-architecture'>LifeID Architecture</h2>
+<p><img src="images/architecture.png" alt="lifeID archtitecture" /></p>
+<h2 id='lifeid-verified-claims-flow'>LifeID Verified Claims Flow</h2>
+<p><img src="images/verified_claims.png" alt="lifeID verified claims flow" /></p>
+<h2 id='lifeid-interation-portal'>LifeID Interation Portal</h2>
+<p><img src="images/integration_portal.png" alt="lifeID Integration Portal" /></p>
+<h2 id='lifeid-passwordless-login'>LifeID Passwordless Login</h2>
+<p><img src="images/login_process.png" alt="Login process diagram" /></p>
+<h2 id='lifeid-openid-connect-integration-in-detail'>LifeID OpenID Connect Integration in detail</h2>
+<p><img src="images/open_id_connect.png" alt="OpenID Connect flow" /></p>
 <h1 id='reference'>Reference</h1>
 <p>Here will be definitions of all the individual terms such as DID?</p>
 
 <p>Maybe duplicative?</p>
-<h1 id='errors'>Errors</h1>
+<pre class="highlight plaintext"><code>
+</code></pre><pre class="highlight plaintext"><code>
+</code></pre><h1 id='errors'>Errors</h1>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
