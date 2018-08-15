@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;,&quot;go&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,12 +210,6 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.svg" class="logo" width="175" height="100" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-              <a href="#" data-language-name="go">go</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -237,18 +231,6 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#i-want-to-let-people-sign-into-my-website-with-lifeid" class="toc-h2 toc-link" data-title="i-want-to-let-people-sign-into-my-website-with-lifeid">I want to let people sign into my website with lifeID</a>
-                  </li>
-                  <li>
-                    <a href="#i-want-to-issue-verified-claims-to-lifeid-holders" class="toc-h2 toc-link" data-title="i-want-to-issue-verified-claims-to-lifeid-holders">I want to issue verified claims to lifeID holders</a>
-                  </li>
-                  <li>
-                    <a href="#i-want-to-earn-id-tokens-by-running-an-instance-of-the-api-bridge" class="toc-h2 toc-link" data-title="i-want-to-earn-id-tokens-by-running-an-instance-of-the-api-bridge">I want to earn ID tokens by running an instance of the API bridge</a>
-                  </li>
-                  <li>
-                    <a href="#i-want-to-build-an-app-that-uses-lifeid" class="toc-h2 toc-link" data-title="i-want-to-build-an-app-that-uses-lifeid">I want to build an app that uses lifeID</a>
-                  </li>
-                  <li>
-                    <a href="#need-to-do-something-else" class="toc-h2 toc-link" data-title="need-to-do-something-else">Need to do something else?</a>
                   </li>
               </ul>
           </li>
@@ -312,36 +294,107 @@
         <h1 id='introduction'>Introduction</h1><h3 id='welcome-to-the-official-lifeid-developer-documentation'>Welcome to the official lifeID developer documentation</h3>
 <p>lifeID is a self-sovereign, open-source, decentralized platform designed to give everyone the tools they need to transact their identity as they wish. For more information on self-sovereign identity (SSI) and lifeID&#39;s mission click ....</p>
 <h3 id='how-is-it-used'>How is it used?</h3>
-<p>The way you interact with the lifeID ecosystem will depend on who are and what your goal is. For individual people, it will likely be through an app on their mobile phone. You will use it to authenticate yourself anytime you need to prove that you are who you say you are. The main advantages for individuals are the convenience of not having to remember a password and important privacy benefits, for example, knowing that your data will not be correlated between websites you login to (for more information about this see: <something>)</p>
+<p>The way you interact with the lifeID ecosystem will depend on who are and what your goal is. For individual people, it will likely be through an app on their mobile phone. You will use it to authenticate yourself anytime you need to prove that you are who you say you are. The main advantages for individuals are the convenience of not having to remember a password and important privacy benefits, for example, knowing that your data will not be correlated between websites you login to (for more information about this see: <em>link to white paper</em></p>
 
-<p>Governments, corporations and non-profit organizations will interact with the lifeID platform primarily through an integration SDK that you can set up and use to verify that people are who they say they are. Organizations will also be able to issue verified credentials to any lifeID holder. The holder will control these credentials and decide who to share them with. (for more information about verified credentials see: <something>) Having a certain bank account balance (verified by the bank), being over a certain age (verified by a government), and having a college degree (verified by the college) are all examples that could be verified credentials.</p>
+<p>Governments, corporations and non-profit organizations will interact with the lifeID platform primarily through an integration SDK that you can set up and use to verify that people are who they say they are. Organizations will also be able to issue verified credentials to any lifeID holder. The holder will control these credentials and decide who to share them with. (for more information about verified credentials see: <em>link to explanation of verified credentials</em>) Having a certain bank account balance (verified by the bank), being over a certain age (verified by a government), and having a college degree (verified by the college) are all examples that could be verified credentials.</p>
 
-<p>For a more detailed description of the architecture and processes, go here<something></p>
-<h1 id='getting-started-guides'>Getting Started Guides</h1><h3 id='i-want-to-let-people-sign-into-my-website-with-lifeid'>I want to let people sign into my website with lifeID</h3>
-<p>First you will need to sign into the lifeID integration portal. The lifeID integration portal is an open source project that exists to help you integrate your organization with lifeID. It will provide you with a way to assign trustees who can act on behalf of your organization, as well as a developer SDK</p>
+<p>For a more detailed description of the architecture and processes, see the architecture diagrams and reference section below</p>
+<h1 id='getting-started-guides'>Getting Started Guides</h1><h2 id='i-want-to-let-people-sign-into-my-website-with-lifeid'>I want to let people sign into my website with lifeID</h2><h3 id='1-sign-into-the-lifeid-integration-portal-and-create-at-least-one-trustee'>1. Sign into the lifeID integration portal and create at least one trustee</h3>
+<p>First you will need to sign into the lifeID integration portal. The lifeID integration portal is an open source project that exists to help you integrate your organization with lifeID. It will provide you with a way to authenticate your users with lifeID, as well as assign trustees who can act on behalf of your organization.</p>
 
 <p>If you don&#39;t already have it, download the lifeID app on your mobile device.</p>
 
-<p>Go to the lifeID integration portal: <lifeid.io/integration-portal-or-whatever></p>
+<p>Go to the lifeID integration portal: <em>link to portal when live</em></p>
 
-<p>Follow the steps to set up your organization which will be registered to the flippin&#39; BLOCKCHAIN. AWESOME!!</p>
+<p>Follow the steps to set up your organization, which will be issued a decentralized identified (&quot;DID&quot;) and registered to the blockchain of your choice. <em>while in alpha, the only choice available will be an ethereum testnet run by lifeID</em></p>
 
-<p><em>how do you pay for the blockchain writes at this stage do we need to implement payment processing?</em></p>
+<p><em>Eventually, once lifeID launches on a main-net blockchain, a cost will be associated with creating a DID and registering it to a blockchain. Currently DID creatiion is free, but later payment processing will occur at this step.</em></p>
 
-<p>The integration portal will allow you to assign trustees for your organization, trustees are individual people who are authorized to transact the organization&#39;s identity. After you create at least one trustee, the integration portal will generate your customized SDK which will contain two parts. Each is explained in more detail below:</p>
+<p>The integration portal will allow you to assign trustees for your organization, trustees are individual people who are authorized to transact the organization&#39;s identity. Your organization must always have at least one trustee.</p>
+<h3 id='2-configure-and-download-your-sdk'>2. Configure and download your SDK</h3><h3 id='after-you-create-at-least-one-trustee-the-integration-portal-will-generate-your-customized-sdk-which-will-contain-two-parts'>After you create at least one trustee, the integration portal will generate your customized SDK which will contain two parts</h3>
+<p>1 A Javascript component to include in your front-end. The integration portal will allow you to select your front-end framework, style the component as you wish and then generate Javascript code to add to your site. The javascript component will be responsible for displaying a QR code that your end users must scan to login. If you wish to include any lifeID branded buttons the Javascript component can generate those as well. <em>(how many frameworks do we want to support? jquery, react, angular?)</em></p>
 
-<ol>
-<li><p>A Javascript component to include in your front-end. The integration portal will allow you to select your front-end framework, style the component as you wish and then generate Javascript code to add to your site. The javascript component will be responsible for displaying a QR code that your end users must scan to login. If you wish to include any lifeID branded buttons the Javascript component can generate those as well. <em>(how do we do this? jquery, react, angular?)</em></p></li>
-<li><p>An OpenID Connect (&quot;OIDC&quot;) core implementation that handles user authentication. The integration portal will generate code for your OIDC implementation in one of lifeID&#39;s supported languages. The OIDC client will integrate with your existing server code to handle all of the interactions with blockchains and the mobile app on your users&#39; phones.</p></li>
-</ol>
+<p>The Javascript SDK in detail:</p>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">did</span><span class="p">:</span> <span class="nx">did</span><span class="p">,</span>
+  <span class="na">application_id</span><span class="p">:</span> <span class="nx">applicationId</span><span class="p">,</span>
+  <span class="na">uid</span><span class="p">:</span> <span class="nx">sessionId</span><span class="p">,</span>
+  <span class="na">callback_url</span><span class="p">:</span> <span class="nx">callbackUrl</span><span class="p">,</span>
+  <span class="na">client_id</span><span class="p">:</span> <span class="nx">clientId</span><span class="p">,</span>
+  <span class="na">nonce</span><span class="p">:</span> <span class="nx">nonce</span><span class="p">,</span>
+  <span class="na">encryption_key</span><span class="p">:</span> <span class="nx">encryptionKey</span><span class="p">,</span>
+  <span class="na">scope_request</span><span class="p">:</span> <span class="nx">scopeRequest</span><span class="p">,</span>
+  <span class="na">credential_request</span><span class="p">:</span> <span class="nx">credentailRequest</span>
+<span class="p">};</span>
+</code></pre>
+<p>The first part of the code to the right is forming an object that will be encoded into the QR code and sent to the lifeID holder.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">signature</span> <span class="o">=</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">accounts</span><span class="p">.</span><span class="nx">sign</span><span class="p">(</span>
+  <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">),</span>
+  <span class="s2">"0x&lt;signing-service-private-key&gt;"</span>
+<span class="p">);</span>
+<span class="nx">payload</span><span class="p">.</span><span class="nx">signature</span> <span class="o">=</span> <span class="nx">signature</span><span class="p">.</span><span class="nx">signature</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">qrcode</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">QRCode</span><span class="p">(</span><span class="s2">"qrcode"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">height</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+  <span class="na">width</span><span class="p">:</span> <span class="mi">500</span>
+<span class="p">});</span>
+<span class="nx">qrcode</span><span class="p">.</span><span class="nx">makeCode</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">));</span>
+</code></pre>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/></p>
 
-<p><em>here will need code examples</em></p>
+<p>The second part of the Javascript component will convert that object into a JSON string that is signed with the private key of the lifeID signing service. In the final version, organizations with a DID will sign their own QR data, but currently lifeID signs the data to make the login process easier to implement.</p>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#auth_state"</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">sessionId</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#nonce"</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">nonce</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"http://lifeid.oidc/codes/"</span> <span class="o">+</span> <span class="nx">sessionId</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">checkServer</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">check</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">body</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">check</span><span class="p">);</span>
+          <span class="nx">parent</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span> <span class="nx">sessionId</span><span class="p">,</span> <span class="nx">nonce</span><span class="p">,</span> <span class="na">authCode</span><span class="p">:</span> <span class="nx">body</span><span class="p">.</span><span class="nx">url</span> <span class="p">},</span> <span class="s2">"*"</span><span class="p">);</span>
+        <span class="p">});</span>
+      <span class="p">}</span>
+    <span class="p">});</span>
+  <span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">checkServer</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</code></pre>
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/></p>
+
+<p>The final part of the Javascript component polls the OIDC server and waits for the authentication. As soon as the component recieves the auth code from the OIDC server, the page will redirect and the user will be logged in.</p>
+
+<p><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/></p>
+
+<p>2 An OpenID Connect (&quot;OIDC&quot;) core implementation that handles user authentication. The integration portal will generate code for your OIDC implementation in one of lifeID&#39;s supported languages. The OIDC client will integrate with your existing server code to handle all of the interactions with blockchains and the mobile app on your users&#39; phones.</p>
+
+<p><code>what does this loook like?</code>
+lifeID does not keep track of your users. If you wish to track and store any information about your uses, you will need to specifically request that information as part of the openID Connect scope. The user will then decide whether to share the information with you, at which point you may use it according to any terms that they have included. https://w3c.github.io/vc-data-model/#terms-of-use</p>
+<h3 id='3-integrate-the-components-with-your-site'>3. Integrate the components with your site</h3>
+<p>You will need to add the Javascript component to your front-end as well as the OIDC implementation on the back-end.</p>
 
 <p>There is a small cost associated with each new user that creates an account on your site. The exact cost will depend on which blockchain you use and the transaction costs associated with it. When it goes live the lifeID portal will process the payments for you.</p>
 
 <p><em>Some example costs and the approximate range</em></p>
-
-<p>lifeID does not currently keep track of your users.</p>
 
 <p><em>Need a way to allow the administrators to revoke users through the integration portal</em></p>
 
@@ -382,8 +435,6 @@
 <p>It will collect payments in ID token and then distribute some of that to the app developer (DIFFICULT TO DO SAFELY!!!) and some to the foundation.</p>
 <h2 id='the-multi-network-did-encoder'>The multi-network DID encoder</h2>
 <p>It can encode and decode off-chain DIDs</p>
-
-<p>That&#39;s all right now</p>
 <h2 id='the-lifeid-openid-connect-provider'>The lifeID openID Connect provider</h2>
 <p>The lifeID openID Connect provider will communicate between the integration portal, the mobile app and your website. It will run on your server and provide an API for your backend to work with.</p>
 <h2 id='the-smart-contracts-on-the-ethereum-blockchain'>The smart contracts on the Ethereum blockchain</h2>
@@ -416,15 +467,10 @@
 <p>Maybe duplicative?</p>
 <pre class="highlight plaintext"><code>
 </code></pre><pre class="highlight plaintext"><code>
+</code></pre><pre class="highlight plaintext"><code>
 </code></pre><h1 id='errors'>Errors</h1>
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-                <a href="#" data-language-name="go">go</a>
-          </div>
       </div>
     </div>
   </body>
